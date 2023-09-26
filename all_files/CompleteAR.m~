@@ -1,7 +1,7 @@
 load speechdata
 
 
-p=36; % Chosen model order
+p=7; % Chosen model order
 
 xtotal=decimate(data,6); % The decimated data 
 fsx=fs/6; % The reduced sampling frequency

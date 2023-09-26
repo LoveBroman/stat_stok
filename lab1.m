@@ -133,5 +133,5 @@ figure;
 spectrogram(melody2dec, window, noverlap, NFFT, 'yaxis')
 %}
 %% 2.5
-melSpectrogram(melody2, fs);
+melspectrogram(melody2, fs);
 
