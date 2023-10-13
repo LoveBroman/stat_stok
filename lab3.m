@@ -94,8 +94,12 @@ for i = 1: 12
     [kappa2, f] = mscohere(data(:, 10), data(:,i), hanning(L), L/2,NFFT, fs);
     v(end+1) = mean(kappa2(1:500));
 end
+%%0.2795    0.2442    0.2619    0.2362    0.4661    0.4677    0.6092    0.8455    0.7012    1.0000
 
-v
+%%  Columns 11 through 12
+
+%%    0.3575    0.2775
+
 
 
 
