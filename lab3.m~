@@ -66,9 +66,9 @@ Rhat = (x.*conj(x))/N;
 
 f = [0:NFFT-1]/NFFT;
 %subplot(224);
-plot(f, Rhat);
+%plot(f, Rhat);
 
-spectrogram(Rhat);
+%spectrogram(Rhat);
 
 %% 3.2
 load eegmulti
@@ -80,12 +80,18 @@ Rhat = (x.*conj(x))/N;
 fs = 1/ (time(3) - time(2));
 L = 256;
 f = [0:NFFT-1]/NFFT;
-plot(f, Rhat);
-pwelch(x, hanning(L), L/2, NFFT, fs)
+%plot(f, Rhat);
+%pwelch(x, hanning(L), L/2, NFFT, fs)
 %ctrogram(Rhat);
 pmtm(Rhat, 5, NFFT, fs);
 
-[kappa2, f] = mscohere(data(:, 2), data(:,1)
+[kappa2, f] = mscohere(data(:, 10), data(:,8), hanning(L), L/2,NFFT, fs);
+plot(f, kappa2)
+
+v = []
+for i = 1: 12
+    [kappa2, f] = mscohere(data(:, 10), data(:,i), hanning(L), L/2,NFFT, fs);
+    v(i) = mean(kappa2(0:500));
 
 
 

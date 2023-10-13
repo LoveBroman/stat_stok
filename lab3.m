@@ -88,6 +88,15 @@ pmtm(Rhat, 5, NFFT, fs);
 [kappa2, f] = mscohere(data(:, 10), data(:,8), hanning(L), L/2,NFFT, fs);
 plot(f, kappa2)
 
+v = [];
+for i = 1: 12
+    
+    [kappa2, f] = mscohere(data(:, 10), data(:,i), hanning(L), L/2,NFFT, fs);
+    v(end+1) = mean(kappa2(1:500));
+end
+
+v
+
 
 
 
